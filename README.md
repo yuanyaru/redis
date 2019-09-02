@@ -1,2 +1,2 @@
 # redis
-Distributed MemoryService
+Distributed Memory Service
