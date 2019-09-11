@@ -2,7 +2,6 @@
 # -*- encoding:utf-8 -*-
 
 import redis
-import time
 
 # redis string 操作
 # 连接
@@ -23,11 +22,26 @@ print(x)
 hgetall = r.hgetall('score')
 print("r.hgetall('score'):", hgetall)
 
+# 获取 name 对应的 hash 中键值对的个数
+hlen = r.hlen('score')
+print("r.hlen('score'):", hlen)
 
+# 获取 name 对应的 hash 中所有的 key 的值
+hkeys = r.hkeys('score')
+print("r.hkeys('score'):", hkeys)
 
+# 获取 name 对应的 hash 中所有的 value 的值
+hvals = r.hvals('score')
+print("r.hvals('score'):", hvals)
 
+# 检查 name 对应的 hash 是否存在当前传入的 key
+hexists = r.hexists('score', '数学')
+print("r.hexists('score', '数学'):", hexists)
 
-
+# 将 name 对应的 hash 中指定 key 的键值对删除
+r.hdel('score', '语文', '英语')
+hdel = r.hmget('score', ['语文', '数学', '英语'])
+print(hdel)
 
 
 
