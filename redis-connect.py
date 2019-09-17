@@ -7,4 +7,4 @@ import redis
 r = redis.Redis(host="192.168.100.64", port=6379)
 r.set('hello', 'world')
 x = r.get('hello')
-print x
+print(x)
