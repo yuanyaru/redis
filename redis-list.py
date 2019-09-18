@@ -59,7 +59,3 @@ r.rpoplpush('strList', 'numList')
 # 从一个列表的右侧移除一个元素并将其添加到另一个列表的左侧
 # timeout，当 src 对应的列表中没有数据时，阻塞等待其有数据的超时时间（秒），0 表示永远阻塞
 r.brpoplpush('strList', 'numList', 0)
-
-
-
-

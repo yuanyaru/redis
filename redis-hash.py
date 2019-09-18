@@ -62,14 +62,3 @@ print(cursor2, data2)
 r.hmset('xxxx', {'k1': 1, 'x1': 'x1', 'k2': 2, 'k3': 3, 'x2': 'x2'})
 for item in r.hscan_iter('xxxx', match='k*', count=2):
     print(item)
-
-
-
-
-
-
-
-
-
-
-

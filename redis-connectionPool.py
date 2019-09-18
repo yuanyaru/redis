@@ -14,5 +14,3 @@ r = redis.Redis(connection_pool=pool)
 r.set('你好', 'redis 你好！')
 x = r.get('你好')
 print(str(x, encoding='utf-8'))
-
-
