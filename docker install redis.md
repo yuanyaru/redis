@@ -1,4 +1,4 @@
-## 共创建6个redis容器，3主3从
+## 本示例共创建6个 redis 容器，3主3从
 ### 从 docker 库获取 redis 镜像
 ``` bash
 docker pull redis
@@ -41,11 +41,13 @@ yum -y install ruby
 ```
 * 由于CentOS7 yum库中ruby的版本支持到 2.0.0，但是gem安装redis需要最低是2.3.0，所以执行以下脚本采用rvm来更新ruby
 ``` bash
+cd scripts/
 ./rvm_update_ruby.sh
 gem install redis
 ```
 2. 将当前目录下 redis-trib.rb 拷贝至 /usr/local/bin
 ``` bash
+cd /home/yyr/redis-cluster-test/
 cp redis-trib.rb /usr/local/bin
 ```
 3. 启动集群
