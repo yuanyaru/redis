@@ -41,7 +41,6 @@ yum -y install ruby
 ```
 * 由于CentOS7 yum库中ruby的版本支持到 2.0.0，但是gem安装redis需要最低是2.3.0，所以执行以下脚本采用rvm来更新ruby
 ``` bash
-cd scripts/
 ./rvm_update_ruby.sh
 gem install redis
 ```
@@ -63,3 +62,10 @@ docker exec -it redis-6380 redis-cli -c -p 6380
 # 非集群方式
 docker exec -it redis-6380 redis-cli -p 6380
 ```
+### 问题
+1. 偶而会出现集群启动失败
+[root@nodeb3 yyr]# redis-trib.rb create --replicas 1 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382 127.0.0.1:6383 127.0.0.1:6384 127.0.0.1:6385
+>>> Creating cluster
+[ERR] Sorry, can't connect to node 127.0.0.1:6380
+解决方法：
+手动启动所有容器，再建立集群关系

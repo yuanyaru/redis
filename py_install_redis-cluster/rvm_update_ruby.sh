@@ -8,8 +8,6 @@ yum -y install curl
 gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -L get.rvm.io | bash -s stable
 source /etc/profile.d/rvm.sh
-rvm list known
-rvm install 2.3.3
 
 # 修改 rvm下载 ruby的源，到 Ruby China 的镜像
 gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
@@ -19,9 +17,6 @@ rvm list known
 
 # 安装一个ruby版本
 rvm install 2.3.3
-
-# 使用一个ruby版本
-rvm use 2.3.3
 
 # 设置默认版本
 rvm use 2.3.3 --default
