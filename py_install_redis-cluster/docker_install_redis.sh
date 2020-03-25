@@ -14,7 +14,7 @@ EOF
 
 for port in `seq 6380 6385`; do
     mkdir -p ./${port}/conf && PORT=${port} envsubst < ./redis-cluster.conf > ./${port}/conf/redis.conf && mkdir -p ./${port}/data;
-done
+    done
 
 #yum -y install tree
 #tree
@@ -22,7 +22,7 @@ done
 # 创建6个redis容器
 for port in `seq 6380 6385`; do 
      docker run --net=host --name=redis-${port} -v `pwd`/${port}/conf/redis.conf:/usr/local/etc/redis/redis.conf -d redis:latest redis-server /usr/local/etc/redis/redis.conf; 
-done
+    done
 
 cd /home/yyr
 ./rvm_update_ruby.sh

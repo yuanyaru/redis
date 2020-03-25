@@ -19,9 +19,9 @@ EOF
 ```
 2. 在 /home/yyr/redis-cluster-test 目录下生成conf和data目录，并生成配置文件
 ``` bash
-for port in `seq 6380 6385`; do
+for port in `seq 6380 6385`; do 
     mkdir -p ./${port}/conf && PORT=${port} envsubst < ./redis-cluster.conf > ./${port}/conf/redis.conf && mkdir -p ./${port}/data;
-done
+  done
 ```
 3. tree命令查看目录
 ``` bash
@@ -46,7 +46,7 @@ gem install redis
 ```
 2. 将当前目录下 redis-trib.rb 拷贝至 /usr/local/bin
 ``` bash
-cd /home/yyr/redis-cluster-test/
+cd /home/yyr/
 cp redis-trib.rb /usr/local/bin
 ```
 3. 启动集群

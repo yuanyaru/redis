@@ -13,7 +13,7 @@ source /etc/profile.d/rvm.sh
 gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
 
 # 查看rvm库中已知的ruby版本
-rvm list known
+#rvm list known
 
 # 安装一个ruby版本
 rvm install 2.3.3
