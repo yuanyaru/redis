@@ -93,8 +93,10 @@ root@nodeb4:/data# redis-cli --cluster create --cluster-replicas 1 192.168.100.6
 ```
 ### 问题
 1.偶而会出现集群启动失败
+```bash
 [root@nodeb3 yyr]# redis-trib.rb create --replicas 1 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382 127.0.0.1:6383 127.0.0.1:6384 127.0.0.1:6385
 >>> Creating cluster
 [ERR] Sorry, can't connect to node 127.0.0.1:6380
+```
 解决方法：
 手动启动所有容器，再建立集群关系。或查看各个容器的配置文件中端口是否配置成功。
