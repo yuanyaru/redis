@@ -60,6 +60,10 @@ redis-trib.rb create --replicas 1 127.0.0.1:6380 127.0.0.1:6381 127.0.0.1:6382 1
 ``` bash
 # 集群方式
 docker exec -it redis-6380 redis-cli -c -p 6380
+# 查看集群信息
+cluster info
+# 查看集群中各节点信息
+cluster nodes
 # 非集群方式
 docker exec -it redis-6380 redis-cli -p 6380
 ```
